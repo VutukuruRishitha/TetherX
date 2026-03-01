@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Request System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Hospital Workflow Management System</h1>
+</header>
+
+<div class="container">
+    <h2>Create Patient Request</h2>
+
+    <input type="text" id="patientName" placeholder="Patient Name">
+
+    <select id="category" onchange="handleCategoryChange()">
+        <option value="">Select Category</option>
+        <option value="General Checkup">General Checkup</option>
+        <option value="Lab Tests">Lab Tests</option>
+        <option value="Scans">Scans</option>
+        <option value="Appointments">Appointments</option>
+        <option value="Pregnancy">Pregnancy</option>
+        <option value="Insurance">Insurance</option>
+    </select>
+
+    <div id="subSection" style="display:none;">
+        <label>Select Sub Category</label>
+        <select id="subCategory" onchange="setDoctorType()"></select>
+    </div>
+
+    <input type="text" id="doctorType" placeholder="Department / Doctor Type" readonly>
+
+    <div id="insurancePriority" style="display:none;">
+        <label>Select Priority (Only for Insurance)</label>
+        <select id="priority">
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+            <option value="Emergency">Emergency</option>
+        </select>
+    </div>
+
+    <button onclick="createRequest()">Submit</button>
+
+    <p id="viewDashboard" style="display:none;">
+        ✅ Request Submitted!
+        <a href="dashboard.html">Click Here to View Dashboard</a>
+    </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
